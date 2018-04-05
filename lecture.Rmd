@@ -2,30 +2,32 @@
 title: "Introduction to R Markdown"
 author: "Mike Smith"
 date: "April 6, 2018"
-output: slidy_presentation
+output: 
+    beamer_presentation:
+        theme: "Copenhagen"
+        colortheme: "dolphin"
+        fonttheme: "structurebold"
+        fig_width: 1
+        fig_caption: false
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, fig.width = 2, dev = 'pdf')
 ```
-
-## Markdown
-
-- Simple document format that can create many types of output
-
-## Output examples
 
 ## What is Markdown?
 
 - Lightweight markup language
 - Write text and 'tag' elements for formatting later
     - Similar to LaTeX or HTML, but much simpler
+- Can be used to create many types of output
     
 ## What is Markdown?
 
 - Lightweight markup language
 - Write text and 'tag' elements for formatting later
     - Similar to LaTeX or HTML, but much simpler
+- Can be used to create many types of output
 
 - Time for a live demo
     - `example_1-layout.md`
@@ -35,7 +37,11 @@ knitr::opts_chunk$set(echo = FALSE)
 - Basically **R** + Markdown
 - You can include blocks of code 
 
-## 
+## What is R Markdown?
+
+- Basically **R** + Markdown
+- You can include blocks of code 
+
 - Allows you to keep in a single document:
     - Code 
     - Explainatory text
@@ -43,7 +49,17 @@ knitr::opts_chunk$set(echo = FALSE)
     
 ## Vignette examples 
 
+## Literate Programming & Live Documents
+
+> "The main idea is to regard a program as a communication to human beings rather than as a set of instructions to a computer." - Donald Knuth
+
+- Combines ‘human readable’ prose with source code in a single document
+- Analyses can be easily understood and repeated
+- Facilitates repeatable research by allowing workflows to be regularly tested for robustness over time
+
 ## Repeatability vs Reproducibility
+
+- Can you get my results from my data?
 
 ## How can R Markdown help?
 
@@ -54,8 +70,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## R Code Chunks
 
-- example_2-codechunks.Rmd
-
+- `example_2-codechunks.Rmd`
+- `example_3-chunkOptions.Rmd`
+- `example_4-simplePipeline.Rmd`
 
 ## `sessionInfo()`
 
@@ -63,7 +80,54 @@ knitr::opts_chunk$set(echo = FALSE)
     - R changes
     - Packages change
     - Locale settings etc
+    
+## Publishing with R Markdown
 
+## Bioconductor Workflows
+
+- Educational documents detailing how to use multiple packages
+- Regularly checked on Bioconductor servers
+    - Ensures changes in component tools are identified quickly
+    - Allows rapid updates by author
+    - Provides users a platform to easily access the complete suite of tools
+- Difficult to get credit 
+    
+## F1000Research
+
+- F1000Research provides a citable, peer-reviewed publication platform
+- Intention is for the same document to be submitted to both platforms - updates are possible
+![](publishing-pipeline.png)
+
+## BiocWorkflowTools
+
+```{r, eval = FALSE, echo = TRUE}
+source("https://bioconductor.org/biocLite.R")
+biocLite("BiocWorkflowTools")
+```
+
+## Conclusions
+
+- R Markdown is great for:
+    - Lab book / journal recording
+    - Reports
+    - Supplementary materials
+    
+- As a princple document for journal articles - we're not there yet!
+
+## Acknowledgements
+
+|      |
+|-------------|
+| Andrzej Oles |
+| Wolfgang Huber |
+| Mike Love |
+| Bernd Klaus |
+
+```{r, eval=TRUE, echo=FALSE, out.width='33%', fig.align='center'}
+knitr::include_graphics(c('deNBI_Logo_rgb.jpg',
+                          'embl-logo.jpg',
+                          'f1000research.jpg'))
+```
 
 
 

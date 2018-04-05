@@ -1,0 +1,52 @@
+---
+title: "A simple pipeline"
+author: "Mike Smith"
+date: "March 29, 2018"
+output: html_document
+---
+
+# Installing the required packages
+
+We install a package crucial to the workflow.  
+
+<!-- We don't run it every time as its already installed on my computer -->
+
+```{r, installation, eval = FALSE, echo = TRUE}
+install.packages('ggplot2')
+```
+
+# Data creation
+
+Imagine this step takes a really long time.  We want to include the code for completeness, but we don't want to re-run it every time we generate the document.  We then load a saved version of the data but hide that code in the final output.
+
+```{r, create-cats, eval = FALSE}
+cats <- data.frame(coat = c("calico", "black", "tabby"), 
+                    weight = c(2.1, 5.0,3.2), 
+                    likes_string = c(TRUE, FALSE, TRUE))
+write.csv(x = cats, file = "feline-data.csv", row.names = FALSE)
+```
+
+```{r, load-cats, include = FALSE}
+cats <- read.csv(file = "feline-data.csv")
+```
+
+# Creating a convicing plot
+
+We look at the relationship between cat weight and their liking of string
+
+```{r, plotting}
+library(ggplot2)
+ggplot(cats, aes(x = likes_string, y = weight, 
+                 group = likes_string,
+                 fill = likes_string)) + 
+    geom_boxplot()
+```
+
+It appears disliking of string indicates a fat cat!
+
+
+# Current R session
+
+```{r}
+sessionInfo()
+```
