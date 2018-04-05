@@ -9,9 +9,13 @@ output: html_document
 
 Here is my first code chunk:
 
-```{r}
+```{r, define-x, eval=TRUE, echo=TRUE, include=FALSE}
 x <- 1 + 1
 x
 ```
 
-It's **great!** The value of x is 2
+# Current R session
+
+```{r}
+sessionInfo()
+```
