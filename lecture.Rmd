@@ -1,0 +1,69 @@
+---
+title: "Introduction to R Markdown"
+author: "Mike Smith"
+date: "April 6, 2018"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Markdown
+
+- Simple document format that can create many types of output
+
+## Output examples
+
+## What is Markdown?
+
+- Lightweight markup language
+- Write text and 'tag' elements for formatting later
+    - Similar to LaTeX or HTML, but much simpler
+    
+## What is Markdown?
+
+- Lightweight markup language
+- Write text and 'tag' elements for formatting later
+    - Similar to LaTeX or HTML, but much simpler
+
+- Time for a live demo
+    - `example_1-layout.md`
+
+## What is R Markdown?
+
+- Basically **R** + Markdown
+- You can include blocks of code 
+
+## 
+- Allows you to keep in a single document:
+    - Code 
+    - Explainatory text
+    - Output e.g. tables, figures
+    
+## Vignette examples 
+
+## Repeatability vs Reproducibility
+
+## How can R Markdown help?
+
+- How often do you have code/ideas/figures spread across multiple files?
+- An example
+    - https://doi.org/10.1186/1471-2105-11-208
+- Look at Supplementary File 2
+
+## R Code Chunks
+
+- example_2-codechunks.Rmd
+
+
+## `sessionInfo()`
+
+- Just because you can run a script later, doesn't mean it gives the same answers!
+    - R changes
+    - Packages change
+    - Locale settings etc
+
+
+
+

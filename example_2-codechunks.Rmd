@@ -1,0 +1,16 @@
+---
+title: "Working with code"
+author: "Mike Smith"
+date: "March 29, 2018"
+output: html_document
+---
+
+# My first code chunk
+
+Here is my first code chunk:
+
+```{r}
+1 + 1
+```
+
+It's **great!** (P < 0.05)
