@@ -47,7 +47,10 @@ knitr::opts_chunk$set(echo = FALSE, fig.width = 2, dev = 'pdf')
     - Explainatory text
     - Output e.g. tables, figures
     
-## Vignette examples 
+## A few examples 
+
+- https://mfr.osf.io/render?url=https://osf.io/v6njb/?action=download%26mode=render
+- https://bioconductor.org/packages/release/bioc/vignettes/BiocStyle/inst/doc/AuthoringRmdVignettes.html
 
 ## Literate Programming & Live Documents
 
@@ -55,9 +58,8 @@ knitr::opts_chunk$set(echo = FALSE, fig.width = 2, dev = 'pdf')
 
 - Combines ‘human readable’ prose with source code in a single document
 - Analyses can be easily understood and repeated
-- Facilitates repeatable research by allowing workflows to be regularly tested for robustness over time
 
-## Repeatability vs Reproducibility
+### Repeatability vs Reproducibility
 
 - Can you get my results from my data?
 
@@ -81,7 +83,13 @@ knitr::opts_chunk$set(echo = FALSE, fig.width = 2, dev = 'pdf')
     - Packages change
     - Locale settings etc
     
-## Publishing with R Markdown
+## How to use R Markdown?
+
+- Consider always using it!
+    - If you're going to write a script, make it Rmd
+- Treat writing code like a lab book
+    
+# Publishing with R Markdown
 
 ## Bioconductor Workflows
 
@@ -119,11 +127,10 @@ biocLite("BiocWorkflowTools")
 |      |
 |-------------|
 | Andrzej Oles |
-| Wolfgang Huber |
-| Mike Love |
 | Bernd Klaus |
+| Wolfgang Huber |
 
-```{r, eval=TRUE, echo=FALSE, out.width='33%', fig.align='center'}
+```{r, eval=TRUE, echo=FALSE, out.width='33%', fig.align='center' }
 knitr::include_graphics(c('deNBI_Logo_rgb.jpg',
                           'embl-logo.jpg',
                           'f1000research.jpg'))
