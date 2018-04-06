@@ -9,6 +9,7 @@ output:
         fonttheme: "structurebold"
         fig_width: 1
         fig_caption: false
+classoption: "aspectratio=169"
 ---
 
 ```{r setup, include=FALSE}
