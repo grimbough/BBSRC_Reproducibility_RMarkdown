@@ -1,5 +1,5 @@
 ---
-title: "Experimenting with chunk options"
+title: "Experimenting with Chunk options"
 author: "Mike Smith"
 date: "March 29, 2018"
 output: html_document
