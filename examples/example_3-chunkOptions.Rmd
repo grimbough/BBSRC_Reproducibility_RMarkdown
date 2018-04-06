@@ -1,5 +1,5 @@
 ---
-title: "Working with code"
+title: "Experimenting with chunk options"
 author: "Mike Smith"
 date: "March 29, 2018"
 output: html_document
@@ -9,13 +9,8 @@ output: html_document
 
 Here is my first code chunk:
 
-```{r, define-x, eval=TRUE, echo=TRUE, include=FALSE}
+```{r, define-x, eval=TRUE, echo=TRUE}
 x <- 1 + 1
 x
 ```
 
-# Current R session
-
-```{r}
-sessionInfo()
-```
