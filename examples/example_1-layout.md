@@ -1,7 +1,7 @@
 ---
 title: "Example document"
 author: "Mike Smith"
-date: "March 29, 2018"
+date: "January 6th, 2019"
 output: html_document
 ---
 
