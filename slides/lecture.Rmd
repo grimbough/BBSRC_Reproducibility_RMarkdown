@@ -1,6 +1,9 @@
 ---
 title: "Introduction to R Markdown"
-author: "Mike Smith"
+author: 
+- Mike Smith\newline
+- "@grimbough"
+header-includes:
 date: "April 6, 2018"
 output: 
     beamer_presentation:
@@ -52,6 +55,7 @@ knitr::opts_chunk$set(echo = FALSE, fig.width = 2, dev = 'pdf')
 
 - https://mfr.osf.io/render?url=https://osf.io/v6njb/?action=download%26mode=render
 - https://bioconductor.org/packages/release/bioc/vignettes/BiocStyle/inst/doc/AuthoringRmdVignettes.html
+- https://www.huber.embl.de/msmb/
 
 ## Literate Programming & Live Documents
 
