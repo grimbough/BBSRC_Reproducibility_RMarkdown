@@ -2,6 +2,6 @@ You can copy and paste the following code into an R session to install the packa
 required for the R Markdown session.
 
 ```r
-install.packages('BiocManager')
+install.packages('BiocManager');
 BiocManager::install(c('BiocWorkflowTools', 'BiocStyle', 'rticles', 'knitr', 'rmarkdown'))
 ```
