@@ -4,7 +4,7 @@ author:
 - Mike Smith\newline
 - "@grimbough"
 header-includes:
-date: "April 6, 2018"
+date: "January 6th, 2019"
 output: 
     beamer_presentation:
         theme: "Copenhagen"
