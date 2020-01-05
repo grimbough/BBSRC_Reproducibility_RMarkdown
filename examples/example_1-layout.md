@@ -1,8 +1,9 @@
 ---
 title: "Example document"
 author: "Mike Smith"
-date: "January 6th, 2019"
-output: html_document
+date: "January 6th, 2020"
+output:
+  html_document: default
 ---
 
 # Introduction
@@ -17,5 +18,6 @@ output: html_document
 
 ## Including images
 
+![](embl-logo.jpg)
 
 
