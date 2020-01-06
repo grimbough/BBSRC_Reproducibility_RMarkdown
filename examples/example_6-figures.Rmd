@@ -38,6 +38,12 @@ if(!file.exists(rdsPath)){
 
 Here we select only the countries that start with 'A' and plot the life expentency against time for each one.
 
+There are some additional features we can add e.g.
+
+- Figure captions and references via `\@ref(fig:print-gappy)` & the bookdown package
+- Multiple figure 'types'
+- Caching code that takes a long time to execute.
+
 ```{r print-gappy, eval = TRUE}
 gappy %>%
   filter(stringr::str_starts(country, "A")) %>%

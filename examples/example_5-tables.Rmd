@@ -2,11 +2,13 @@
 title: "Rmarkdown continued"
 author: "Mike Smith"
 date: "`r Sys.Date()`"
-output: 
-    html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
+## This sets default values for chunk options
 knitr::opts_chunk$set(
   echo=TRUE,
   warning=FALSE,
@@ -26,6 +28,12 @@ if(!file.exists(rdsPath)){
   gappy <- readRDS(file = rdsPath)
 }
 ```
+
+We can print the contents of a data frame, but it looks pretty ugly.  There are ways to make this nicer e.g.
+  
+- df_print: paged
+- knitr::kable (digits, align, caption)
+- DT::datatable
 
 ```{r print-gappy, eval = TRUE}
 gappy[1:20,]
