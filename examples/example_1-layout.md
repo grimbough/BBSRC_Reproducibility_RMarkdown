@@ -18,6 +18,5 @@ output:
 
 ## Including images
 
-![](embl-logo.jpg)
 
 
