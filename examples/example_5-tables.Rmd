@@ -1,0 +1,33 @@
+---
+title: "Rmarkdown continued"
+author: "Mike Smith"
+date: "`r Sys.Date()`"
+output: 
+    html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo=TRUE,
+  warning=FALSE,
+  error=TRUE,# keep running even if error encountered
+  message=FALSE)
+```
+
+Here we check if we've already downloaded the data.  If we have, read it, otherwise download and save a copy for next time.
+
+```{r import-data, eval = TRUE, echo = FALSE}
+rdsPath <- "gapminder-FiveYearData.rds"
+if(!file.exists(rdsPath)){
+  gappy <- read.table('http://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv',
+                      header=TRUE, sep=',',strip.white = T)
+  saveRDS(gappy,file = rdsPath)
+}else{
+  gappy <- readRDS(file = rdsPath)
+}
+```
+
+```{r print-gappy, eval = TRUE}
+gappy[1:20,]
+```
+

@@ -3,6 +3,8 @@ title: "A simple pipeline"
 author: "Mike Smith"
 date: "January 6th, 2019"
 output: html_document
+editor_options: 
+  chunk_output_type: inline
 ---
 
 # Installing the required packages
@@ -21,20 +23,21 @@ Imagine this step takes a really long time.  We want to include the code for com
 
 ```{r, create-cats, eval = FALSE}
 cats <- data.frame(coat = c("calico", "black", "tabby"), 
-                    weight = c(2.1, 5.0,3.2), 
+                    weight = c(6.1, 5.0,3.2), 
                     likes_string = c(TRUE, FALSE, TRUE))
 write.csv(x = cats, file = "feline-data.csv", row.names = FALSE)
 ```
 
 ```{r, load-cats, include = FALSE}
 cats <- read.csv(file = "feline-data.csv")
+cats
 ```
 
 # Creating a convicing plot
 
 We look at the relationship between cat weight and their liking of string
 
-```{r, plotting}
+```{r, plotting, cache=TRUE}
 library(ggplot2)
 ggplot(cats, aes(x = likes_string, y = weight, 
                  group = likes_string,

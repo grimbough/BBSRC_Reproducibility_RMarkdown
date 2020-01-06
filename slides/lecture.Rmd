@@ -19,6 +19,25 @@ classoption: "aspectratio=169"
 knitr::opts_chunk$set(echo = FALSE, fig.width = 2, dev = 'pdf')
 ```
 
+
+## Literate Programming & Live Documents
+
+> "The main idea is to regard a program as a communication to human beings rather than as a set of instructions to a computer." - Donald Knuth
+
+- Combines ‘human readable’ prose with source code and output in a single document
+- Analyses can be more easily understood and reproduced
+
+### Replicability vs Reproducibility
+
+- Can you get my results from my data?
+
+## Motivating example
+
+- How often do you have code/ideas/figures spread across multiple files?
+- An example
+    - https://doi.org/10.1186/1471-2105-11-208
+- Look at Supplementary File 2
+
 ## What is Markdown?
 
 - Lightweight markup language
@@ -48,7 +67,7 @@ knitr::opts_chunk$set(echo = FALSE, fig.width = 2, dev = 'pdf')
 
 - Allows you to keep in a single document:
     - Code 
-    - Explainatory text
+    - Explanatory text
     - Output e.g. tables, figures
     
 ## A few examples 
@@ -57,29 +76,15 @@ knitr::opts_chunk$set(echo = FALSE, fig.width = 2, dev = 'pdf')
 - https://bioconductor.org/packages/release/bioc/vignettes/BiocStyle/inst/doc/AuthoringRmdVignettes.html
 - https://www.huber.embl.de/msmb/
 
-## Literate Programming & Live Documents
-
-> "The main idea is to regard a program as a communication to human beings rather than as a set of instructions to a computer." - Donald Knuth
-
-- Combines ‘human readable’ prose with source code in a single document
-- Analyses can be easily understood and repeated
-
-### Repeatability vs Reproducibility
-
-- Can you get my results from my data?
-
-## How can R Markdown help?
-
-- How often do you have code/ideas/figures spread across multiple files?
-- An example
-    - https://doi.org/10.1186/1471-2105-11-208
-- Look at Supplementary File 2
-
 ## R Code Chunks
 
 - `example_2-codechunks.Rmd`
-- `example_3-chunkOptions.Rmd`
-- `example_4-simplePipeline.Rmd`
+
+## Introducing R Notebooks
+
+- Consider always using R Markdown!
+    - If you're going to write a script, make it Rmd
+- Treat writing code like a lab book
 
 ## `sessionInfo()`
 
@@ -88,45 +93,6 @@ knitr::opts_chunk$set(echo = FALSE, fig.width = 2, dev = 'pdf')
     - Packages change
     - Locale settings etc
     
-## How to use R Markdown?
-
-- Consider always using it!
-    - If you're going to write a script, make it Rmd
-- Treat writing code like a lab book
-    
-# Publishing with R Markdown
-
-## Bioconductor Workflows
-
-- Educational documents detailing how to use multiple packages
-- Regularly checked on Bioconductor servers
-    - Ensures changes in component tools are identified quickly
-    - Allows rapid updates by author
-    - Provides users a platform to easily access the complete suite of tools
-- Difficult to get credit 
-    
-## F1000Research
-
-- F1000Research provides a citable, peer-reviewed publication platform
-- Intention is for the same document to be submitted to both platforms - updates are possible
-![](publishing-pipeline.png)
-
-## BiocWorkflowTools
-
-```{r, eval = FALSE, echo = TRUE}
-source("https://bioconductor.org/biocLite.R")
-biocLite("BiocWorkflowTools")
-```
-
-## Conclusions
-
-- R Markdown is great for:
-    - Lab book / journal recording
-    - Reports
-    - Supplementary materials
-    
-- As a princple document for journal articles - we're not there yet!
-
 ## Acknowledgements
 
 |      |
