@@ -26,6 +26,7 @@ knitr::opts_chunk$set(echo = FALSE, fig.width = 2, dev = 'pdf')
 
 - Combines ‘human readable’ prose with source code and output in a single document
 - Analyses can be more easily understood and reproduced
+- R Markdown, Jupyter Notebooks, ...
 
 ### Replicability vs Reproducibility
 

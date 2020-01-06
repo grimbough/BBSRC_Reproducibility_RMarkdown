@@ -3,6 +3,9 @@ title: "Publishing with R Markdown"
 author: 
 - Mike Smith\newline
 - "@grimbough"
+- \newline\newline
+- Mike Love\newline
+- "@mikelove"
 header-includes:
 date: "January 6th, 2020"
 output: 
@@ -17,12 +20,36 @@ classoption: "aspectratio=169"
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, fig.width = 2, dev = 'pdf')
+op <- par(mfrow = c(2, 2), mar = 0.1 + c(4, 4, 1, 1), oma = c(0, 0, 2,
+   0), cex.lab = 1.5, font.lab = 1.5, cex.axis = 1.3, bty = "n", las = 1,
+   cex.main = 1.5)
+
 ```
 
+## Where to put analysis code with a publication
+
+- GitHub Pages
+- Bookdown / RStudio Connect / RPubs
+- Binder / Jupyter Notebook Viewer
+- Leanpub
+- Hypothes.is
+
+Self publishing is great, but doesn't get traditional academic credit
+
+
+## Options for publishing code
+
+Four existing models I am aware of:
+
+- Rmarkdown to Overleaf to F1000Research (more on this)
+- Jupyter Notebook as Supplement
+- Embedded CodeOcean “capsule”
+- eLife & Stencila
 
 ## Bioconductor Workflows
 
 - Educational documents detailing how to use multiple packages
+    - https://bioconductor.org/packages/release/BiocViews.html#___Workflow
 - Regularly checked on Bioconductor servers
     - Ensures changes in component tools are identified quickly
     - Allows rapid updates by author
@@ -32,15 +59,41 @@ knitr::opts_chunk$set(echo = FALSE, fig.width = 2, dev = 'pdf')
 ## F1000Research
 
 - F1000Research provides a citable, peer-reviewed publication platform
-- Intention is for the same document to be submitted to both platforms - updates are possible
-![](publishing-pipeline.png)
+- Intention is for the same document to be submitted to both platforms 
+- Updates are possible
+
+```{r, eval=TRUE, echo=FALSE, out.width='25%', fig.align='right', fig.env=op }
+knitr::include_graphics('f1000-revisions.png')
+```
+
+## Ideal scenario
+
+```{r, eval=TRUE, echo=FALSE, out.width='70%', fig.align='center'}
+knitr::include_graphics('publishing-pipeline.png')
+```
 
 ## BiocWorkflowTools
 
 ```{r, eval = FALSE, echo = TRUE}
-source("https://bioconductor.org/biocLite.R")
-biocLite("BiocWorkflowTools")
+install.packages('BiocManager')
+BiocManager::install("BiocWorkflowTools")
 ```
+
+## Workflow
+
+- Use BiocWorkflowTools to create a 'Workflow R package'
+  - `BiocWorkflowTools::createBiocWorkflow(path = "Myworkflow")`
+- Write a single Rmd vignette for both platforms
+- Submit package to Bioconductor
+- Use `uploadToOverleaf()` to begin journal submission
+
+
+## In Overleaf
+
+- Once rendered into Latex, the code chunks cannot be changed
+- Can do minor editing of text BUT need to also edit Rmd source in parallel
+- Submit to F1000Research button
+- Incorporating editor revisions is challenging!
 
 ## Conclusions
 
@@ -49,7 +102,7 @@ biocLite("BiocWorkflowTools")
     - Reports
     - Supplementary materials
     
-- As a princple document for journal articles - we're not there yet!
+- As a primary document for journal articles - we're not there yet!
 
 ## Acknowledgements
 
